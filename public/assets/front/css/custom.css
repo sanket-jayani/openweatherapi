@@ -1,0 +1,117 @@
+table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        th {
+            background: #e4e4e4;
+            color: black;
+            font-weight: bolder;
+        }
+
+        .col-sm-4 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-left: 475px !important;
+            margin-top: 25px !important;
+        }
+
+        a {
+            color: #337ab7;
+            text-decoration: none;
+            padding-left: 40px !important;
+        }
+
+        /*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+        @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+
+            table {
+                width: 100%;
+            }
+
+            /* Force table to not be like tables anymore */
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc;
+            }
+
+            td {
+                /* Behave  like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                /* Label the data */
+                content: attr(data-column);
+
+                color: #000;
+                font-weight: bold;
+            }
+
+            .form-control {
+                border: 1px solid #D9D9D9;
+                color: #5F5F5F;
+            }
+
+            .form-control {
+                display: block;
+                width: 100%;
+                height: calc(1.25em + 1.4rem + 1px);
+                padding: 0.7rem 0.7rem;
+                font-size: 0.96rem;
+                font-weight: 400;
+                line-height: 1.25;
+                color: #4E5154;
+                background-color: #FFFFFF;
+                background-clip: padding-box;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+
+        }
